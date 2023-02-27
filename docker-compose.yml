@@ -21,6 +21,6 @@ services:
       - "5432:5432"
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - postgres-db:/val/lib/postgresql/data
+      - postgres-db:/val/lib/postgresql/data1
 volumes:
   postgres-db:

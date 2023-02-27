@@ -9,3 +9,10 @@ CREATE TABLE
         balance INT,
         reserve INT
     );
+CREATE TABLE
+    orders (
+        id SERIAL NOT NULL PRIMARY KEY,
+        userid INT,
+        taksid INT,
+        cost INT
+    );
