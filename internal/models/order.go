@@ -6,20 +6,20 @@ import (
 )
 
 type Order struct {
-	Id int `json:"id" db:"id"`
+	Id int `db:"id"`
 	UserId int
-	TaskId int
+	TaskId int `json:"taskid"`
 	Cost int `json:"cost" db:"cost"`
 }
 
 func CreateOrder(userId, taskId, cost int) {
-	stmt, err := storage.Client.Prepare("INSERT INTO orders (userid, taskid, cost) VALUE ($1, $2, $3) RETURNING id;")
+	stmt, err := storage.Client.Prepare("INSERT INTO orders (userid, taksid, cost) VALUES ($1, $2, $3) RETURNING id;")
 	helpers.CheckErr(err)
 	stmt.QueryRow(userId, taskId, cost)
 }
 
 func AddToFinance(userId, taskId, cost int) {
-	stmt, err := storage.Client.Prepare("INSERT INTO finances (userid, taskid, cost) VALUE ($1, $2, $3) RETURNING id;")
+	stmt, err := storage.Client.Prepare("INSERT INTO finances (userid, taksid, cost) VALUES ($1, $2, $3) RETURNING id;")
 	helpers.CheckErr(err)
 	stmt.QueryRow(userId, taskId, cost)
 }

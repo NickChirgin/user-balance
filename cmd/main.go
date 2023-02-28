@@ -10,6 +10,6 @@ func main() {
 	s := server.NewServer()
 	routes.RegisterRoutes(s.Router)
 	user := models.FindUser(2)
-	user.ReserveBalance(1200)
+	user.AddBalance(1200)
 	s.Run()
 } 
