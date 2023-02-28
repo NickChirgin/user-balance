@@ -16,3 +16,10 @@ CREATE TABLE
         taksid INT,
         cost INT
     );
+CREATE TABLE
+    finances (
+        id SERIAL NOT NULL PRIMARY KEY,
+        userid INT,
+        taksid INT,
+        cost INT
+    );
