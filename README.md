@@ -11,7 +11,7 @@ docker compose build
 ```
 
 ```
-docker comspose up
+docker compose up
 
 ```
 Сервер запускается на локалхосте, порт 3000
